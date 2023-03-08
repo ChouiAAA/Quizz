@@ -1,0 +1,57 @@
+<div class="level__global-container container ">
+  <h4 class="text-center text-primary p-3">Choisissez votre niveau de difficulté</h4>
+
+  <div class="level__container container d-flex justify-content-around mb-3">
+
+    <div class="form-check">
+    <input class="form-check-input"
+      type="checkbox"
+      value="beginner"
+      name="beginner"
+      id="beginner"
+      [disabled]="started"
+      [checked]="beginner"
+      (change)="beginner= !beginner">
+    <label class="form-check-label" for="beginner">Débutant</label>
+    </div>
+
+    <div class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      value="confirmed"
+      name="confirmed"
+      id="confirmed"
+      [disabled]="started"
+      [checked]="confirmed"
+      (change)="confirmed= !confirmed">
+    <label class="form-check-label" for="confirmed">Confirmé</label>
+    </div>
+
+    <div class="form-check">
+      <input
+      class="form-check-input"
+      type="checkbox"
+      value="expert"
+      type="checkbox"
+      name="expert"
+      id="expert"
+      [disabled]="started"
+      [checked]="expert"
+      (change)="expert= !expert">
+      <label class="form-check-label" for="expert">Expert</label>
+    </div>
+
+  </div>
+
+  <div
+  *ngIf="!started"
+  class="level__button-container d-flex">
+    <button type="button"
+    class="btn btn-primary rounded-pill mx-auto px-4"
+    [disabled]="!(beginner || confirmed || expert)"
+    (click)="getStarted()">Start</button>
+
+  </div>
+
+</div>

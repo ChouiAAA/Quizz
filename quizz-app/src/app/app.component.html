@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <h1 class="text-center p-5"> Quizz </h1>
+  <br>
+
+  <app-level (selectedAnswerEmiter)="setQuestionList($event)"></app-level>
+  <app-question
+  [currentQuestion]="currentQuestion"
+  (nextQuestionEmitter)="pickAQuestion()"
+  (isGoodAnswerEmitter)="addGoodAnswer($event)"
+  ></app-question>
+
+  <app-counter 
+  [numberOfQuestion]="questionToDisplay.length"
+  [numberOfAskedQuestion]="questionsAsked.length"
+  [numberOfTrueAnswer]="trueAnswer"
+  >
+
+  </app-counter>
+
+</div>
+
+
+
+
+
